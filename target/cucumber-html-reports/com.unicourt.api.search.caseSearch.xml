@@ -1,0 +1,17 @@
+<testsuite failures="0" name="com/unicourt/api/search/caseSearch.feature" skipped="0" tests="1" time="2.324974">
+  <testcase classname="com.unicourt.api.search.caseSearch" name="To perform court case seach based on case name." time="2.324974">
+    <system-out>Given url baseUrl ......................................................... passed
+And path '/caseSearch' .................................................... passed
+And param q = 'caseName:'+'Google' ........................................ passed
+And param sort = 'filedDate' .............................................. passed
+And param order = 'desc' .................................................. passed
+And param pageNumber = 1 .................................................. passed
+And header Authorization = 'Bearer '+ token ............................... passed
+When method GET ........................................................... passed
+* print response .......................................................... passed
+Then status 200 ........................................................... passed
+* def casename = karate.jsonPath(response,"$..caseName") .................. passed
+* print casename .......................................................... passed
+* match each karate.lowerCase(casename) contains karate.lowerCase('Google') . passed</system-out>
+  </testcase>
+</testsuite>

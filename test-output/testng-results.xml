@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="1" total="1" passed="0">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="8273" started-at="2023-09-05T05:41:24Z" finished-at="2023-09-05T05:41:32Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="8273" started-at="2023-09-05T05:41:24Z" finished-at="2023-09-05T05:41:32Z">
+      <class name="com.unicourt.api.utils.Runner">
+        <test-method status="FAIL" signature="testOAuth()[pri:0, instance:com.unicourt.api.utils.Runner@68c4039c]" name="testOAuth" duration-ms="8235" started-at="2023-09-05T11:11:24Z" finished-at="2023-09-05T11:11:32Z">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[there are scenario failures ]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: there are scenario failures 
+	at org.testng.AssertJUnit.fail(AssertJUnit.java:59)
+	at org.testng.AssertJUnit.assertTrue(AssertJUnit.java:24)
+	at com.unicourt.api.utils.Runner.testOAuth(Runner.java:33)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:643)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:820)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1128)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
+	at org.testng.TestRunner.run(TestRunner.java:632)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:236)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:81)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testOAuth -->
+      </class> <!-- com.unicourt.api.utils.Runner -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

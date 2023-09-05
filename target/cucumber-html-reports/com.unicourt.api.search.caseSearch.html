@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+<meta charset="utf-8">
+    
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+    
+<link href="res/bootstrap.min.css" rel="stylesheet" type="text/css">
+    
+<link href="res/karate-report.css" rel="stylesheet" type="text/css">
+    
+<link href="favicon.ico" rel="shortcut icon">
+    
+<script src="res/jquery.min.js" type="text/javascript"></script>
+    <script src="res/jquery.tablesorter.min.js" type="text/javascript"></script>
+    <script src="res/bootstrap.min.js" type="text/javascript"></script>
+    <script src="res/karate-report.js" type="text/javascript"></script>
+    
+<title>com.unicourt.api.search.caseSearch</title>
+  
+</head>
+  
+<body>
+    
+<div id="root-container">
+      
+<div id="leftnav">
+        
+<div class="nav-logo">
+          
+<a href="karate-summary.html">
+            <img alt="Karate" src="res/karate-logo.svg">
+          </a>
+          
+<div class="nav-count">
+            
+<div class="bg-success" id="nav-pass">1</div>
+            
+<div class="bg-danger" id="nav-fail">0</div>
+          
+</div>
+        
+</div>
+        
+<div id="nav-type">Scenarios</div>         
+        
+<div id="nav-date">2023-09-05 11:11:30 AM</div>        
+      
+<div class="nav-container">
+<div class="nav-item passed">
+<a href="#[1.1:24]">[1.1:24] To perform court case seach based on case name. </a>
+</div>
+</div>
+</div>
+      
+<div id="content">
+      
+<div class="page-heading alert alert-primary">
+<a href="karate-summary.html">Summary</a><span class="feature-label">|</span><a href="karate-tags.html">Tags</a><span class="feature-label">|</span><span class="feature-label">Feature:</span><span class="feature-name">com/unicourt/api/search/caseSearch.feature</span><span class="feature-description">Case search</span>
+</div>
+<div class="scenario">
+<div class="scenario-heading" id="[1.1:24]">
+<div class="heading-container">
+<div class="scenario-tags"></div>
+<span class="scenario-keyword">Scenario Outline: [1.1:24]</span><span class="scenario-name">To perform court case seach based on case name. </span>
+</div>
+<div class="scenario-time passed">ms: 2325</div>
+</div>
+<div class="step-row">
+<div class="step-container" id="1">
+<div class="step-ref passed">1</div>
+<div class="step-cell passed">Given url baseUrl</div>
+</div>
+<div class="time-cell passed">0</div>
+</div>
+<div class="preformatted" data-parent="1">11:11:27.205 karate.env system property was: qa</div>
+<div class="step-row">
+<div class="step-container" id="2">
+<div class="step-ref passed">2</div>
+<div class="step-cell passed">And path '/caseSearch'</div>
+</div>
+<div class="time-cell passed">4</div>
+</div>
+<div class="step-row">
+<div class="step-container" id="3">
+<div class="step-ref passed">3</div>
+<div class="step-cell passed">And param q = 'caseName:'+'Google'</div>
+</div>
+<div class="time-cell passed">4</div>
+</div>
+<div class="step-row">
+<div class="step-container" id="4">
+<div class="step-ref passed">4</div>
+<div class="step-cell passed">And param sort = 'filedDate'</div>
+</div>
+<div class="time-cell passed">3</div>
+</div>
+<div class="step-row">
+<div class="step-container" id="5">
+<div class="step-ref passed">5</div>
+<div class="step-cell passed">And param order = 'desc'</div>
+</div>
+<div class="time-cell passed">3</div>
+</div>
+<div class="step-row">
+<div class="step-container" id="6">
+<div class="step-ref passed">6</div>
+<div class="step-cell passed">And param pageNumber = 1</div>
+</div>
+<div class="time-cell passed">4</div>
+</div>
+<div class="step-row">
+<div class="step-container" id="7">
+<div class="step-ref passed">7</div>
+<div class="step-cell passed">And header Authorization = 'Bearer '+ token</div>
+</div>
+<div class="time-cell passed">6</div>
+</div>
+<div class="step-row">
+<div class="step-container" id="8">
+<div class="step-ref passed">8</div>
+<div class="step-cell passed">When method GET</div>
+</div>
+<div class="time-cell passed">2246</div>
+</div>
+<div class="preformatted" data-parent="8">11:11:28.271 request:
+1 &gt; GET https://enterpriseapi.unicourt.com/caseSearch?q=caseName%3AGoogle&amp;sort=filedDate&amp;order=desc&amp;pageNumber=1
+1 &gt; Accept-Encoding: gzip,deflate
+1 &gt; Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl9pZCI6IlRLSURLZTY0OGIwM2JlQ0pzMiIsImNsaWVudF9pZCI6IllPSDFXSEc1NlZWVUI3R2wzYTdYcW04QjZXQ2h3d3pjIiwidWNhX2FjY291bnRfaWQiOiJwMTU1NjQyNzI3MyIsImlzX2ludGVybmFsIjp0cnVlLCJhdWQiOiJodHRwczovL2VudGVycHJpc2VhcGkudW5pY291cnQuY29tIiwiaXNzIjoiaHR0cHM6Ly91bmljb3VydC5jb20iLCJzdWIiOiJFTlRFUlBSSVNFX0FQSV9DUkVERU5USUFMUyIsImd0eSI6IkNsaWVudF9DcmVkZW50YWlscyIsImlhdCI6MTY4NjgzMjA2MiwiZXhwIjo0ODQyNTkyMDYyfQ.OIoL_mD7dbrElzsPPtg09N--gngxx1IIVEzM22NYI8wgOUBr1_255oJIEeZ_r63HcWrs-T6nVq_jaKBEyIlzSpUckApwo-oN0R1XSdCubFR6BuB-plA6A02KDKwkLO5IDJu6izmRPRriLU0z6uk-B0qGs-3zuhbFw-gSqeViigXCIAbKwnyX9WPLFtedRCND2JqKIVq8viLnq8Qo0eLHWqURsN6yJOHjlec2QbCFTXPS4E6xoEHB5jmycl-XegOuXUJDlGSrtiNyxH1h3ksxRWO5yx7ovDCJIyJddoXlTOeP-gw-9tHT-eoSAuv2DcdrLOuG2Ww0dpqmZzYG6qozUQ
+1 &gt; Connection: Keep-Alive
+1 &gt; Host: enterpriseapi.unicourt.com
+1 &gt; User-Agent: Apache-HttpClient/4.5.12 (Java/1.8.0_144)
+
+11:11:30.320 response time in milliseconds: 1808.43
+1 &lt; 200
+1 &lt; Apigw-Requestid: KxLdghs4oAMEYvA=
+1 &lt; Connection: keep-alive
+1 &lt; Content-Length: 28564
+1 &lt; Content-Type: application/json
+1 &lt; Date: Tue, 05 Sep 2023 05:41:30 GMT
+{"object": "CaseSearchResponse", "caseSearchResultArray": [{"object": "CaseSearchResult", "caseId": "CASEaicd00d1a4433e", "caseName": "State of California, County of Fresno vs. The internet service provider known as Google LLC", "caseNumber": "W23906441", "filedDate": "2023-08-31T00:00:00+00:00", "court": {"object": "Court", "courtId": "CORTcTkxTTLRwLgsEP", "courtTypeId": "COTPm8jjc2PAydpFhq", "courtSystemId": "COSYACHBdMewtaG5DY", "type": "State", "system": "California Superior Courts", "name": "Fresno County Superior Court", "nameAka": "Fresno County Superior Court of California", "additionalLevels": null, "containerType": null, "container": null, "createdDate": "2022-07-08T05:50:05+00:00", "jurisdictionGeoForCourtAPI": "https://enterpriseapi.unicourt.com/masterData/court/CORTcTkxTTLRwLgsEP/jurisdictionGeo", "courtLocationsForCourtAPI": "https://enterpriseapi.unicourt.com/masterData/court/CORTcTkxTTLRwLgsEP/courtLocations", "appealCourtsForCourtAPI": "https://enterpriseapi.unicourt.com/masterData/court/CORTcTkxTTLRwLgsEP/appealCourts", "courtServiceStatusAPI": "https://enterpriseapi.unicourt.com/masterData/courtServiceStatus?q=Court%3A%28courtId%3A%22CORTcTkxTTLRwLgsEP%22%29"}, "courtLocation": {"object": "CourtLocation", "courtLocationId": "COLON3VvpuSsF37JMv", "name": "Fresno Superior Courthouse Downtown", "streetAddress1": "1100 Van Ness Ave", "streetAddress2": null, "city": "Fresno", "stateName": "California", "createdDate": "2022-07-08T05:50:05+00:00", "courtsForCourtLocationAPI": "https://enterpriseapi.unicourt.com/masterData/courtLocation/COLON3VvpuSsF37JMv/courts", "courtServiceStatusAPI": "https://enterpriseapi.unicourt.com/masterData/courtServiceStatus?q=CourtLocation%3A%28courtLocationId%3A%22COLON3VvpuSsF37JMv%22%29"}, "caseType": {"object": "CaseType", "caseTypeId": "CTYPMrcrvoUeZHmsgk", "caseClassId": "CSCLMrcrvoUeZHmsgk", "areaOfLawId": null, "caseTypeGroupId": null, "caseClass": "Criminal", "areaOfLaw": null, "caseTypeGroup": null, "name": null, "saliCode": null, "caseTypeTag": null, "createdDate": "2022-10-12T11:00:47+00:00"}, "caseStatus": {"object": "CaseStatus", "caseStatusId": "CSSTVnE3shD3CGtkcZ", "caseStatusGroupId": "CSSGCYoBCJ3A8j4MX4", "caseStatusGroup": "Open", "name": "Open", "caseClassArray": ["Civil", "Criminal"], "createdDate": "2022-03-28T04:58:47+00:00"}, "firstFetchDate": "2023-09-01T09:15:03+00:00", "lastFetchDate": "2023-09-03T09:08:40+00:00", "lastFetchDateWithUpdates": "2023-09-01T09:15:03+00:00", "participantsLastFetchDate": "2023-09-03T09:08:40+00:00", "caseAPI": "https://enterpriseapi.unicourt.com/case/CASEaicd00d1a4433e", "matchedObjectArray": [{"object": "MatchedObject", "matchedObjectId": "CASEaicd00d1a4433e", "matchedObjectName": "Case", "matchedObjectAttribute": "caseName", "highlightSnippet": "The internet service provider known as &lt;b&gt;Google&lt;/b&gt; LLC", "matchedObjectAPI": "https://enterpriseapi.unicourt.com/case/CASEaicd00d1a4433e"}]}, {"object": "CaseSearchResult", "caseId": "CASEgza9d8fe78180d", "caseName": "U.S. Pat. 2,100 - Google LLC vs Google LLC", "caseNumber": "2023000076", "filedDate": "2023-08-30T00:00:00+00:00", "court": {"object": "Court", "courtId": "CORT7NednCcA9RdPVH", "courtTypeId": "COTPLurdwRD5jyKSYb", "courtSystemId": "COSYdujvgWvFdfVB9S", "type": "Federal", "system": "Patent Trial and Appeal Board", "name": "Patent Trial and Appeal Board", "nameAka": "Patent Trial and Appeal Board", "additionalLevels": null, "containerType": null, "container": null, "createdDate": "2022-07-08T05:50:03+00:00", "jurisdictionGeoForCourtAPI": "https://enterpriseapi.unicourt.com/masterData/court/CORT7NednCcA9RdPVH/jurisdictionGeo", "courtLocationsForCourtAPI": "https://enterpriseapi.unicourt.com/masterData/court/CORT7NednCcA9RdPVH/courtLocations", "appealCourtsForCourtAPI": "https://enterpriseapi.unicourt.com/masterData/court/CORT7NednCcA9RdPVH/appealCourts", "courtServiceStatusAPI": "https://enterpriseapi.unicourt.com/masterData/courtServiceStatus?q=Court%3A%28courtId%3A%22CORT7NednCcA9RdPVH%22%29"}, "courtLocation": {"object": "CourtLocation", "courtLocationId": "COLOKzzEugLTkLTf39", "name": "Madison Building", "streetAddress1": "600 Dulany St", "streetAddress2": null, "city": "Alexandria", "stateName": "Virginia", "createdDate": "2022-07-08T05:50:04+00:00", "courtsForCourtLocationAPI": "https://enterpriseapi.unicourt.com/masterData/courtLocation/COLOKzzEugLTkLTf39/courts", "courtServiceStatusAPI": "https://enterpriseapi.unicourt.com/masterData/courtServiceStatus?q=CourtLocation%3A%28courtLocationId%3A%22COLOKzzEugLTkLTf39%22%29"}, "caseType": {"object": "CaseType", "caseTypeId": "CTYPSbP8fBKFgVv5Lo", "caseClassId": "CSCLNjbKTN7Yfo2wdb", "areaOfLawId": "AOFL5U7NSxGxQgQVCy", "caseTypeGroupId": "CTYGZ2chrLe2rgcHWK", "caseClass": "Civil", "areaOfLaw": "Intellectual Property", "caseTypeGroup": "Intellectual Property", "name": "Patent", "saliCode": "INTP-PATE", "caseTypeTag": null, "createdDate": "2022-03-28T04:58:33+00:00"}, "caseStatus": {"object": "CaseStatus", "caseStatusId": "CSSTU3RKG2Ej3yarht", "caseStatusGroupId": "CSSG6ERqyFdydo52WK", "caseStatusGroup": "Closed", "name": "Judgment Entered", "caseClassArray": ["Civil"], "createdDate": "2022-03-28T04:58:47+00:00"}, "firstFetchDate": "2023-08-31T06:00:19+00:00", "lastFetchDate": "2023-09-04T06:02:03+00:00", "lastFetchDateWithUpdates": "2023-08-31T06:00:19+00:00", "participantsLastFetchDate": "2023-09-04T06:02:03+00:00", "caseAPI": "https://enterpriseapi.unicourt.com/case/CASEgza9d8fe78180d", "matchedObjectArray": [{"object": "MatchedObject", "matchedObjectId": "CASEgza9d8fe78180d", "matchedObjectName": "Case", "matchedObjectAttribute": "caseName", "highlightSnippet": "Pat. 2,100 - &lt;b&gt;Google&lt;/b&gt; LLC vs &lt;b&gt;Google&lt;/b&gt; LLC", "matchedObjectAPI": "https://enterpriseapi.unicourt.com/case/CASEgza9d8fe78180d"}]}, {"object": "CaseSearchResult", "caseId": "CASEgkcf03db64a793", "caseName": "ALD Social, LLC v. Google LLC", "caseNumber": "23-2340", "filedDate": "2023-08-30T00:00:00+00:00", "court": {"object": "Court", "courtId": "CORTiAe7Jz7v23hk5G", "courtTypeId": "COTPLurdwRD5jyKSYb", "courtSystemId": "COSYKbTM5W3zTCNN6j", "type": "Federal", "system": "U.S. Courts of Appeals", "name": "Court of Appeals for the Federal Circuit", "nameAka": "U.S. Court of Appeals for the Federal Circuit", "additionalLevels": null, "containerType": "Circuit", "container": "Federal", "createdDate": "2022-07-08T05:49:56+00:00", "jurisdictionGeoForCourtAPI": "https://enterpriseapi.unicourt.com/masterData/court/CORTiAe7Jz7v23hk5G/jurisdictionGeo", "courtLocationsForCourtAPI": "https://enterpriseapi.unicourt.com/masterData/court/CORTiAe7Jz7v23hk5G/courtLocations", "appealCourtsForCourtAPI": "https://enterpriseapi.unicourt.com/masterData/court/CORTiAe7Jz7v23hk5G/appealCourts", "courtServiceStatusAPI": "https://enterpriseapi.unicourt.com/masterData/courtServiceStatus?q=Court%3A%28courtId%3A%22CORTiAe7Jz7v23hk5G%22%29"}, "courtLocation": {"object": "CourtLocation", "courtLocationId": "COLOUbAE888qHT2p7K", "name": "Howard T. Markey National Courts Building", "streetAddress1": "717 Madison Pl Nw", "streetAddress2": null, "city": "District of Columbia", "stateName": "District of Columbia", "createdDate": "2022-07-08T05:49:56+00:00", "courtsForCourtLocationAPI": "https://enterpriseapi.unicourt.com/masterData/courtLocation/COLOUbAE888qHT2p7K/courts", "courtServiceStatusAPI": "https://enterpriseapi.unicourt.com/masterData/courtServiceStatus?q=CourtLocation%3A%28courtLocationId%3A%22COLOUbAE888qHT2p7K%22%29"}, "caseType": {"object": "CaseType", "caseTypeId": "CTYPSbP8fBKFgVv5Lo", "caseClassId": "CSCLNjbKTN7Yfo2wdb", "areaOfLawId": "AOFL5U7NSxGxQgQVCy", "caseTypeGroupId": "CTYGZ2chrLe2rgcHWK", "caseClass": "Civil", "areaOfLaw": "Intellectual Property", "caseTypeGroup": "Intellectual Property", "name": "Patent", "saliCode": "INTP-PATE", "caseTypeTag": null, "createdDate": "2022-03-28T04:58:33+00:00"}, "caseStatus": {"object": "CaseStatus", "caseStatusId": "CSSTVnE3shD3CGtkcZ", "caseStatusGroupId": "CSSGCYoBCJ3A8j4MX4", "caseStatusGroup": "Open", "name": "Open", "caseClassArray": ["Civil", "Criminal"], "createdDate": "2022-03-28T04:58:47+00:00"}, "firstFetchDate": "2023-09-01T05:01:20+00:00", "lastFetchDate": "2023-09-01T05:12:51+00:00", "lastFetchDateWithUpdates": "2023-09-01T05:12:51+00:00", "participantsLastFetchDate": "2023-09-01T05:12:51+00:00", "caseAPI": "https://enterpriseapi.unicourt.com/case/CASEgkcf03db64a793", "matchedObjectArray": [{"object": "MatchedObject", "matchedObjectId": "CASEgkcf03db64a793", "matchedObjectName": "Case", "matchedObjectAttribute": "caseName", "highlightSnippet": "&lt;b&gt;Google&lt;/b&gt; LLC", "matchedObjectAPI": "https://enterpriseapi.unicourt.com/case/CASEgkcf03db64a793"}]}, {"object": "CaseSearchResult", "caseId": "CASEgk8e8bc4bb610c", "caseName": "Rene Cabrera, et al v. Google, LLC", "caseNumber": "23-80077", "filedDate": "2023-08-30T00:00:00+00:00", "court": {"object": "Court", "courtId": "CORTCNCpcBrj8TWDfZ", "courtTypeId": "COTPLurdwRD5jyKSYb", "courtSystemId": "COSYKbTM5W3zTCNN6j", "type": "Federal", "system": "U.S. Courts of Appeals", "name": "Court of Appeals for the Ninth Circuit", "nameAka": "U.S. Court of Appeals for the Ninth Circuit", "additionalLevels": null, "containerType": "Circuit", "container": "9", "createdDate": "2022-07-08T05:49:48+00:00", "jurisdictionGeoForCourtAPI": "https://enterpriseapi.unicourt.com/masterData/court/CORTCNCpcBrj8TWDfZ/jurisdictionGeo", "courtLocationsForCourtAPI": "https://enterpriseapi.unicourt.com/masterData/court/CORTCNCpcBrj8TWDfZ/courtLocations", "appealCourtsForCourtAPI": "https://enterpriseapi.unicourt.com/masterData/court/CORTCNCpcBrj8TWDfZ/appealCourts", "courtServiceStatusAPI": "https://enterpriseapi.unicourt.com/masterData/courtServiceStatus?q=Court%3A%28courtId%3A%22CORTCNCpcBrj8TWDfZ%22%29"}, "courtLocation": {"object": "CourtLocation", "courtLocationId": "COLOYvn7woiYDvfx64", "name": "James R. Browning U.S. Courthouse", "streetAddress1": "95 Seventh St", "streetAddress2": null, "city": "San Francisco", "stateName": "California", "createdDate": "2022-07-08T05:49:56+00:00", "courtsForCourtLocationAPI": "https://enterpriseapi.unicourt.com/masterData/courtLocation/COLOYvn7woiYDvfx64/courts", "courtServiceStatusAPI": "https://enterpriseapi.unicourt.com/masterData/courtServiceStatus?q=CourtLocation%3A%28courtLocationId%3A%22COLOYvn7woiYDvfx64%22%29"}, "caseType": {"object": "CaseType", "caseTypeId": "CTYPNjbKTN7Yfo2wdb", "caseClassId": "CSCLNjbKTN7Yfo2wdb", "areaOfLawId": null, "caseTypeGroupId": null, "caseClass": "Civil", "areaOfLaw": null, "caseTypeGroup": null, "name": null, "saliCode": null, "caseTypeTag": null, "createdDate": "2022-03-28T04:58:35+00:00"}, "caseStatus": {"object": "CaseStatus", "caseStatusId": "CSSTVnE3shD3CGtkcZ", "caseStatusGroupId": "CSSGCYoBCJ3A8j4MX4", "caseStatusGroup": "Open", "name": "Open", "caseClassArray": ["Civil", "Criminal"], "createdDate": "2022-03-28T04:58:47+00:00"}, "firstFetchDate": "2023-09-01T05:01:11+00:00", "lastFetchDate": "2023-09-01T05:10:57+00:00", "lastFetchDateWithUpdates": "2023-09-01T05:10:57+00:00", "participantsLastFetchDate": "2023-09-01T05:10:57+00:00", "caseAPI": "https://enterpriseapi.unicourt.com/case/CASEgk8e8bc4bb610c", "matchedObjectArray": [{"object": "MatchedObject", "matchedObjectId": "CASEgk8e8bc4bb610c", "matchedObjectName": "Case", "matchedObjectAttribute": "caseName", "highlightSnippet": "&lt;b&gt;Google&lt;/b&gt;, LLC", "matchedObjectAPI": "https://enterpriseapi.unicourt.com/case/CASEgk8e8bc4bb610c"}]}, {"object": "CaseSearchResult", "caseId": "CASEgk14b34abd71c8", "caseName": "Robert Kennedy, Jr. v. Google, LLC, et al", "caseNumber": "23-16141", "filedDate": "2023-08-30T00:00:00+00:00", "court": {"object": "Court", "courtId": "CORTCNCpcBrj8TWDfZ", "courtTypeId": "COTPLurdwRD5jyKSYb", "courtSystemId": "COSYKbTM5W3zTCNN6j", "type": "Federal", "system": "U.S. Courts of Appeals", "name": "Court of Appeals for the Ninth Circuit", "nameAka": "U.S. Court of Appeals for the Ninth Circuit", "additionalLevels": null, "containerType": "Circuit", "container": "9", "createdDate": "2022-07-08T05:49:48+00:00", "jurisdictionGeoForCourtAPI": "https://enterpriseapi.unicourt.com/masterData/court/CORTCNCpcBrj8TWDfZ/jurisdictionGeo", "courtLocationsForCourtAPI": "https://enterpriseapi.unicourt.com/masterData/court/CORTCNCpcBrj8TWDfZ/courtLocations", "appealCourtsForCourtAPI": "https://enterpriseapi.unicourt.com/masterData/court/CORTCNCpcBrj8TWDfZ/appealCourts", "courtServiceStatusAPI": "https://enterpriseapi.unicourt.com/masterData/courtServiceStatus?q=Court%3A%28courtId%3A%22CORTCNCpcBrj8TWDfZ%22%29"}, "courtLocation": {"object": "CourtLocation", "courtLocationId": "COLOYvn7woiYDvfx64", "name": "James R. Browning U.S. Courthouse", "streetAddress1": "95 Seventh St", "streetAddress2": null, "city": "San Francisco", "stateName": "California", "createdDate": "2022-07-08T05:49:56+00:00", "courtsForCourtLocationAPI": "https://enterpriseapi.unicourt.com/masterData/courtLocation/COLOYvn7woiYDvfx64/courts", "courtServiceStatusAPI": "https://enterpriseapi.unicourt.com/masterData/courtServiceStatus?q=CourtLocation%3A%28courtLocationId%3A%22COLOYvn7woiYDvfx64%22%29"}, "caseType": {"object": "CaseType", "caseTypeId": "CTYPDZ7CNZpmnkUF8d", "caseClassId": "CSCLNjbKTN7Yfo2wdb", "areaOfLawId": "AOFLWfxVDrHw4JiiQ3", "caseTypeGroupId": "CTYGDZ7CNZpmnkUF8d", "caseClass": "Civil", "areaOfLaw": "Constitutional and Civil Rights", "caseTypeGroup": "Constitutional and Civil Rights", "name": null, "saliCode": null, "caseTypeTag": null, "createdDate": "2023-03-14T18:57:59+00:00"}, "caseStatus": {"object": "CaseStatus", "caseStatusId": "CSSTVnE3shD3CGtkcZ", "caseStatusGroupId": "CSSGCYoBCJ3A8j4MX4", "caseStatusGroup": "Open", "name": "Open", "caseClassArray": ["Civil", "Criminal"], "createdDate": "2022-03-28T04:58:47+00:00"}, "firstFetchDate": "2023-09-01T05:01:14+00:00", "lastFetchDate": "2023-09-01T05:11:37+00:00", "lastFetchDateWithUpdates": "2023-09-01T05:11:37+00:00", "participantsLastFetchDate": "2023-09-01T05:11:37+00:00", "caseAPI": "https://enterpriseapi.unicourt.com/case/CASEgk14b34abd71c8", "matchedObjectArray": [{"object": "MatchedObject", "matchedObjectId": "CASEgk14b34abd71c8", "matchedObjectName": "Case", "matchedObjectAttribute": "caseName", "highlightSnippet": "&lt;b&gt;Google&lt;/b&gt;, LLC, et al", "matchedObjectAPI": "https://enterpriseapi.unicourt.com/case/CASEgk14b34abd71c8"}]}, {"object": "CaseSearchResult", "caseId": "CASEja1652d1cd2678", "caseName": "GOOGLE INC GEO LOCATION", "caseNumber": "66FSW-23-22", "filedDate": "2023-08-29T00:00:00+00:00", "court": {"object": "Court", "courtId": "CORTHWfhFfPPftXEHJ", "courtTypeId": "COTPm8jjc2PAydpFhq", "courtSystemId": "COSYbwZtGk67kNqgrT", "type": "State", "system": "Arkansas County District Courts", "name": "Sebastian County District Court", "nameAka": "Sebastian County District Court of Arkansas", "additionalLevels": null, "containerType": null, "container": null, "createdDate": "2022-07-08T05:50:55+00:00", "jurisdictionGeoForCourtAPI": "https://enterpriseapi.unicourt.com/masterData/court/CORTHWfhFfPPftXEHJ/jurisdictionGeo", "courtLocationsForCourtAPI": "https://enterpriseapi.unicourt.com/masterData/court/CORTHWfhFfPPftXEHJ/courtLocations", "appealCourtsForCourtAPI": "https://enterpriseapi.unicourt.com/masterData/court/CORTHWfhFfPPftXEHJ/appealCourts", "courtServiceStatusAPI": "https://enterpriseapi.unicourt.com/masterData/courtServiceStatus?q=Court%3A%28courtId%3A%22CORTHWfhFfPPftXEHJ%22%29"}, "courtLocation": {"object": "CourtLocation", "courtLocationId": "COLOS9tWhb2gbieMZG", "name": "Sebastian County District Court", "streetAddress1": "901 S B St", "streetAddress2": null, "city": "Fort Smith", "stateName": "Arkansas", "createdDate": "2022-07-08T05:50:55+00:00", "courtsForCourtLocationAPI": "https://enterpriseapi.unicourt.com/masterData/courtLocation/COLOS9tWhb2gbieMZG/courts", "courtServiceStatusAPI": "https://enterpriseapi.unicourt.com/masterData/courtServiceStatus?q=CourtLocation%3A%28courtLocationId%3A%22COLOS9tWhb2gbieMZG%22%29"}, "caseType": {"object": "CaseType", "caseTypeId": "CTYPMrcrvoUeZHmsgk", "caseClassId": "CSCLMrcrvoUeZHmsgk", "areaOfLawId": null, "caseTypeGroupId": null, "caseClass": "Criminal", "areaOfLaw": null, "caseTypeGroup": null, "name": null, "saliCode": null, "caseTypeTag": null, "createdDate": "2022-10-12T11:00:47+00:00"}, "caseStatus": null, "firstFetchDate": "2023-08-30T13:06:53+00:00", "lastFetchDate": "2023-09-01T14:09:18+00:00", "lastFetchDateWithUpdates": "2023-08-30T13:06:54+00:00", "participantsLastFetchDate": "2023-09-01T14:09:18+00:00", "caseAPI": "https://enterpriseapi.unicourt.com/case/CASEja1652d1cd2678", "matchedObjectArray": [{"object": "MatchedObject", "matchedObjectId": "CASEja1652d1cd2678", "matchedObjectName": "Case", "matchedObjectAttribute": "caseName", "highlightSnippet": "&lt;b&gt;GOOGLE&lt;/b&gt; INC GEO LOCATION", "matchedObjectAPI": "https://enterpriseapi.unicourt.com/case/CASEja1652d1cd2678"}]}, {"object": "CaseSearchResult", "caseId": "CASEgz041dc28786fd", "caseName": "U.S. Pat. 2,600 - Google LLC vs Google LLC", "caseNumber": "2023000856", "filedDate": "2023-08-29T00:00:00+00:00", "court": {"object": "Court", "courtId": "CORT7NednCcA9RdPVH", "courtTypeId": "COTPLurdwRD5jyKSYb", "courtSystemId": "COSYdujvgWvFdfVB9S", "type": "Federal", "system": "Patent Trial and Appeal Board", "name": "Patent Trial and Appeal Board", "nameAka": "Patent Trial and Appeal Board", "additionalLevels": null, "containerType": null, "container": null, "createdDate": "2022-07-08T05:50:03+00:00", "jurisdictionGeoForCourtAPI": "https://enterpriseapi.unicourt.com/masterData/court/CORT7NednCcA9RdPVH/jurisdictionGeo", "courtLocationsForCourtAPI": "https://enterpriseapi.unicourt.com/masterData/court/CORT7NednCcA9RdPVH/courtLocations", "appealCourtsForCourtAPI": "https://enterpriseapi.unicourt.com/masterData/court/CORT7NednCcA9RdPVH/appealCourts", "courtServiceStatusAPI": "https://enterpriseapi.unicourt.com/masterData/courtServiceStatus?q=Court%3A%28courtId%3A%22CORT7NednCcA9RdPVH%22%29"}, "courtLocation": {"object": "CourtLocation", "courtLocationId": "COLOKzzEugLTkLTf39", "name": "Madison Building", "streetAddress1": "600 Dulany St", "streetAddress2": null, "city": "Alexandria", "stateName": "Virginia", "createdDate": "2022-07-08T05:50:04+00:00", "courtsForCourtLocationAPI": "https://enterpriseapi.unicourt.com/masterData/courtLocation/COLOKzzEugLTkLTf39/courts", "courtServiceStatusAPI": "https://enterpriseapi.unicourt.com/masterData/courtServiceStatus?q=CourtLocation%3A%28courtLocationId%3A%22COLOKzzEugLTkLTf39%22%29"}, "caseType": {"object": "CaseType", "caseTypeId": "CTYPSbP8fBKFgVv5Lo", "caseClassId": "CSCLNjbKTN7Yfo2wdb", "areaOfLawId": "AOFL5U7NSxGxQgQVCy", "caseTypeGroupId": "CTYGZ2chrLe2rgcHWK", "caseClass": "Civil", "areaOfLaw": "Intellectual Property", "caseTypeGroup": "Intellectual Property", "name": "Patent", "saliCode": "INTP-PATE", "caseTypeTag": null, "createdDate": "2022-03-28T04:58:33+00:00"}, "caseStatus": {"object": "CaseStatus", "caseStatusId": "CSSTU3RKG2Ej3yarht", "caseStatusGroupId": "CSSG6ERqyFdydo52WK", "caseStatusGroup": "Closed", "name": "Judgment Entered", "caseClassArray": ["Civil"], "createdDate": "2022-03-28T04:58:47+00:00"}, "firstFetchDate": "2023-08-30T06:00:21+00:00", "lastFetchDate": "2023-09-04T06:02:57+00:00", "lastFetchDateWithUpdates": "2023-08-30T06:00:22+00:00", "participantsLastFetchDate": "2023-09-04T06:02:57+00:00", "caseAPI": "https://enterpriseapi.unicourt.com/case/CASEgz041dc28786fd", "matchedObjectArray": [{"object": "MatchedObject", "matchedObjectId": "CASEgz041dc28786fd", "matchedObjectName": "Case", "matchedObjectAttribute": "caseName", "highlightSnippet": "Pat. 2,600 - &lt;b&gt;Google&lt;/b&gt; LLC vs &lt;b&gt;Google&lt;/b&gt; LLC", "matchedObjectAPI": "https://enterpriseapi.unicourt.com/case/CASEgz041dc28786fd"}]}, {"object": "CaseSearchResult", "caseId": "CASEjve37e74d9aef0", "caseName": "In the Matter of GOOGLE CUSTODIAN OF RECORDS KANDIYOHI COUNTY", "caseNumber": "C2311423", "filedDate": "2023-08-28T00:00:00+00:00", "court": {"object": "Court", "courtId": "CORTH3va5oSQnUmNdD", "courtTypeId": "COTPm8jjc2PAydpFhq", "courtSystemId": "COSYACHBdMewtaG5DY", "type": "State", "system": "California Superior Courts", "name": "Santa Clara County Superior Court", "nameAka": "Santa Clara County Superior Court of California", "additionalLevels": null, "containerType": null, "container": null, "createdDate": "2022-07-08T05:50:14+00:00", "jurisdictionGeoForCourtAPI": "https://enterpriseapi.unicourt.com/masterData/court/CORTH3va5oSQnUmNdD/jurisdictionGeo", "courtLocationsForCourtAPI": "https://enterpriseapi.unicourt.com/masterData/court/CORTH3va5oSQnUmNdD/courtLocations", "appealCourtsForCourtAPI": "https://enterpriseapi.unicourt.com/masterData/court/CORTH3va5oSQnUmNdD/appealCourts", "courtServiceStatusAPI": "https://enterpriseapi.unicourt.com/masterData/courtServiceStatus?q=Court%3A%28courtId%3A%22CORTH3va5oSQnUmNdD%22%29"}, "courtLocation": {"object": "CourtLocation", "courtLocationId": "COLOQDvGFDzMFpXZQ2", "name": "Hall of Justice", "streetAddress1": "190-200 W Hedding St", "streetAddress2": null, "city": "San Jose", "stateName": "California", "createdDate": "2022-07-08T05:50:15+00:00", "courtsForCourtLocationAPI": "https://enterpriseapi.unicourt.com/masterData/courtLocation/COLOQDvGFDzMFpXZQ2/courts", "courtServiceStatusAPI": "https://enterpriseapi.unicourt.com/masterData/courtServiceStatus?q=CourtLocation%3A%28courtLocationId%3A%22COLOQDvGFDzMFpXZQ2%22%29"}, "caseType": {"object": "CaseType", "caseTypeId": "CTYPMrcrvoUeZHmsgk", "caseClassId": "CSCLMrcrvoUeZHmsgk", "areaOfLawId": null, "caseTypeGroupId": null, "caseClass": "Criminal", "areaOfLaw": null, "caseTypeGroup": null, "name": null, "saliCode": null, "caseTypeTag": null, "createdDate": "2022-10-12T11:00:47+00:00"}, "caseStatus": {"object": "CaseStatus", "caseStatusId": "CSSTVnE3shD3CGtkcZ", "caseStatusGroupId": "CSSGCYoBCJ3A8j4MX4", "caseStatusGroup": "Open", "name": "Open", "caseClassArray": ["Civil", "Criminal"], "createdDate": "2022-03-28T04:58:47+00:00"}, "firstFetchDate": "2023-08-29T13:03:10+00:00", "lastFetchDate": "2023-09-04T15:01:37+00:00", "lastFetchDateWithUpdates": "2023-08-29T13:03:10+00:00", "participantsLastFetchDate": "2023-09-04T15:01:37+00:00", "caseAPI": "https://enterpriseapi.unicourt.com/case/CASEjve37e74d9aef0", "matchedObjectArray": [{"object": "MatchedObject", "matchedObjectId": "CASEjve37e74d9aef0", "matchedObjectName": "Case", "matchedObjectAttribute": "caseName", "highlightSnippet": "In the Matter of &lt;b&gt;GOOGLE&lt;/b&gt; CUSTODIAN OF RECORDS KANDIYOHI COUNTY", "matchedObjectAPI": "https://enterpriseapi.unicourt.com/case/CASEjve37e74d9aef0"}]}, {"object": "CaseSearchResult", "caseId": "CASEgubb8dc3845948", "caseName": "Zubiate v. Google et al", "caseNumber": "5:23-cv-00196", "filedDate": "2023-08-28T00:00:00+00:00", "court": {"object": "Court", "courtId": "CORTj3H5DoWhaEnb5u", "courtTypeId": "COTPLurdwRD5jyKSYb", "courtSystemId": "COSY8rpkvJ4kMi4ZYD", "type": "Federal", "system": "U.S. District Courts", "name": "Texas Northern District", "nameAka": "U.S. District Court for the Northern District of Texas", "additionalLevels": null, "containerType": "District", "container": "Northern District of Texas", "createdDate": "2022-07-08T05:49:53+00:00", "jurisdictionGeoForCourtAPI": "https://enterpriseapi.unicourt.com/masterData/court/CORTj3H5DoWhaEnb5u/jurisdictionGeo", "courtLocationsForCourtAPI": "https://enterpriseapi.unicourt.com/masterData/court/CORTj3H5DoWhaEnb5u/courtLocations", "appealCourtsForCourtAPI": "https://enterpriseapi.unicourt.com/masterData/court/CORTj3H5DoWhaEnb5u/appealCourts", "courtServiceStatusAPI": "https://enterpriseapi.unicourt.com/masterData/courtServiceStatus?q=Court%3A%28courtId%3A%22CORTj3H5DoWhaEnb5u%22%29"}, "courtLocation": {"object": "CourtLocation", "courtLocationId": "COLOPQaC8SfLn8Wh6g", "name": "U.S. Post Office and Courthouse", "streetAddress1": "341 Pine St", "streetAddress2": null, "city": "Abilene", "stateName": "Texas", "createdDate": "2022-07-08T05:49:54+00:00", "courtsForCourtLocationAPI": "https://enterpriseapi.unicourt.com/masterData/courtLocation/COLOPQaC8SfLn8Wh6g/courts", "courtServiceStatusAPI": "https://enterpriseapi.unicourt.com/masterData/courtServiceStatus?q=CourtLocation%3A%28courtLocationId%3A%22COLOPQaC8SfLn8Wh6g%22%29"}, "caseType": {"object": "CaseType", "caseTypeId": "CTYPcfcuHnRH6iLhKq", "caseClassId": "CSCLNjbKTN7Yfo2wdb", "areaOfLawId": "AOFLWfxVDrHw4JiiQ3", "caseTypeGroupId": "CTYGL5raTDZ95PcPTz", "caseClass": "Civil", "areaOfLaw": "Constitutional and Civil Rights", "caseTypeGroup": "Prisoner", "name": "Civil Right", "saliCode": "CIVR-POLR", "caseTypeTag": null, "createdDate": "2022-03-28T04:58:32+00:00"}, "caseStatus": {"object": "CaseStatus", "caseStatusId": "CSSTVnE3shD3CGtkcZ", "caseStatusGroupId": "CSSGCYoBCJ3A8j4MX4", "caseStatusGroup": "Open", "name": "Open", "caseClassArray": ["Civil", "Criminal"], "createdDate": "2022-03-28T04:58:47+00:00"}, "firstFetchDate": "2023-08-29T06:03:16+00:00", "lastFetchDate": "2023-08-29T12:15:10+00:00", "lastFetchDateWithUpdates": "2023-08-29T12:15:10+00:00", "participantsLastFetchDate": "2023-08-29T12:15:10+00:00", "caseAPI": "https://enterpriseapi.unicourt.com/case/CASEgubb8dc3845948", "matchedObjectArray": [{"object": "MatchedObject", "matchedObjectId": "CASEgubb8dc3845948", "matchedObjectName": "Case", "matchedObjectAttribute": "caseName", "highlightSnippet": "&lt;b&gt;Google&lt;/b&gt; et al", "matchedObjectAPI": "https://enterpriseapi.unicourt.com/case/CASEgubb8dc3845948"}]}, {"object": "CaseSearchResult", "caseId": "CASEbic9269751cc47", "caseName": "RE: Google LLC", "caseNumber": "23CV421598", "filedDate": "2023-08-28T00:00:00+00:00", "court": {"object": "Court", "courtId": "CORTH3va5oSQnUmNdD", "courtTypeId": "COTPm8jjc2PAydpFhq", "courtSystemId": "COSYACHBdMewtaG5DY", "type": "State", "system": "California Superior Courts", "name": "Santa Clara County Superior Court", "nameAka": "Santa Clara County Superior Court of California", "additionalLevels": null, "containerType": null, "container": null, "createdDate": "2022-07-08T05:50:14+00:00", "jurisdictionGeoForCourtAPI": "https://enterpriseapi.unicourt.com/masterData/court/CORTH3va5oSQnUmNdD/jurisdictionGeo", "courtLocationsForCourtAPI": "https://enterpriseapi.unicourt.com/masterData/court/CORTH3va5oSQnUmNdD/courtLocations", "appealCourtsForCourtAPI": "https://enterpriseapi.unicourt.com/masterData/court/CORTH3va5oSQnUmNdD/appealCourts", "courtServiceStatusAPI": "https://enterpriseapi.unicourt.com/masterData/courtServiceStatus?q=Court%3A%28courtId%3A%22CORTH3va5oSQnUmNdD%22%29"}, "courtLocation": {"object": "CourtLocation", "courtLocationId": "COLOWHMqi9qeB8DiuT", "name": "Downtown Superior Court", "streetAddress1": "191 N 1St St", "streetAddress2": null, "city": "San Jose", "stateName": "California", "createdDate": "2022-07-08T05:50:15+00:00", "courtsForCourtLocationAPI": "https://enterpriseapi.unicourt.com/masterData/courtLocation/COLOWHMqi9qeB8DiuT/courts", "courtServiceStatusAPI": "https://enterpriseapi.unicourt.com/masterData/courtServiceStatus?q=CourtLocation%3A%28courtLocationId%3A%22COLOWHMqi9qeB8DiuT%22%29"}, "caseType": {"object": "CaseType", "caseTypeId": "CTYPNjbKTN7Yfo2wdb", "caseClassId": "CSCLNjbKTN7Yfo2wdb", "areaOfLawId": null, "caseTypeGroupId": null, "caseClass": "Civil", "areaOfLaw": null, "caseTypeGroup": null, "name": null, "saliCode": null, "caseTypeTag": null, "createdDate": "2022-03-28T04:58:35+00:00"}, "caseStatus": {"object": "CaseStatus", "caseStatusId": "CSSTVnE3shD3CGtkcZ", "caseStatusGroupId": "CSSGCYoBCJ3A8j4MX4", "caseStatusGroup": "Open", "name": "Open", "caseClassArray": ["Civil", "Criminal"], "createdDate": "2022-03-28T04:58:47+00:00"}, "firstFetchDate": "2023-08-29T13:00:38+00:00", "lastFetchDate": "2023-09-04T15:02:27+00:00", "lastFetchDateWithUpdates": "2023-08-29T13:00:39+00:00", "participantsLastFetchDate": "2023-09-04T15:02:27+00:00", "caseAPI": "https://enterpriseapi.unicourt.com/case/CASEbic9269751cc47", "matchedObjectArray": [{"object": "MatchedObject", "matchedObjectId": "CASEbic9269751cc47", "matchedObjectName": "Case", "matchedObjectAttribute": "caseName", "highlightSnippet": "RE: &lt;b&gt;Google&lt;/b&gt; LLC", "matchedObjectAPI": "https://enterpriseapi.unicourt.com/case/CASEbic9269751cc47"}]}], "q": "caseName%3AGoogle", "caseSearchId": "CSRC7Y7Vx9dCphFSwo", "nextPageAPI": "https://enterpriseapi.unicourt.com/caseSearch/CSRC7Y7Vx9dCphFSwo?pageNumber=2", "previousPageAPI": null, "pageNumber": 1, "totalPages": 578, "totalCount": 5775}</div>
+<div class="step-row">
+<div class="step-container" id="9">
+<div class="step-ref passed">9</div>
+<div class="step-cell passed">* print response</div>
+</div>
+<div class="time-cell passed">23</div>
+</div>
+<div class="preformatted" data-parent="9">11:11:30.359 [print] {
+  "q": "caseName%3AGoogle",
+  "pageNumber": 1,
+  "nextPageAPI": "https://enterpriseapi.unicourt.com/caseSearch/CSRC7Y7Vx9dCphFSwo?pageNumber=2",
+  "previousPageAPI": null,
+  "totalPages": 578,
+  "caseSearchResultArray": [
+    {
+      "lastFetchDateWithUpdates": "2023-09-01T09:15:03+00:00",
+      "caseStatus": {
+        "caseStatusGroup": "Open",
+        "caseStatusId": "CSSTVnE3shD3CGtkcZ",
+        "createdDate": "2022-03-28T04:58:47+00:00",
+        "name": "Open",
+        "caseStatusGroupId": "CSSGCYoBCJ3A8j4MX4",
+        "caseClassArray": [
+          "Civil",
+          "Criminal"
+        ],
+        "object": "CaseStatus"
+      },
+      "matchedObjectArray": [
+        {
+          "matchedObjectAPI": "https://enterpriseapi.unicourt.com/case/CASEaicd00d1a4433e",
+          "highlightSnippet": "The internet service provider known as &lt;b&gt;Google&lt;/b&gt; LLC",
+          "matchedObjectName": "Case",
+          "matchedObjectId": "CASEaicd00d1a4433e",
+          "matchedObjectAttribute": "caseName",
+          "object": "MatchedObject"
+        }
+      ],
+      "court": {
+        "container": null,
+        "courtSystemId": "COSYACHBdMewtaG5DY",
+        "courtServiceStatusAPI": "https://enterpriseapi.unicourt.com/masterData/courtServiceStatus?q=Court%3A%28courtId%3A%22CORTcTkxTTLRwLgsEP%22%29",
+        "additionalLevels": null,
+        "containerType": null,
+        "type": "State",
+        "nameAka": "Fresno County Superior Court of California",
+        "jurisdictionGeoForCourtAPI": "https://enterpriseapi.unicourt.com/masterData/court/CORTcTkxTTLRwLgsEP/jurisdictionGeo",
+        "system": "California Superior Courts",
+        "createdDate": "2022-07-08T05:50:05+00:00",
+        "courtLocationsForCourtAPI": "https://enterpriseapi.unicourt.com/masterData/court/CORTcTkxTTLRwLgsEP/courtLocations",
+        "name": "Fresno County Superior Court",
+        "appealCourtsForCourtAPI": "https://enterpriseapi.unicourt.com/masterData/court/CORTcTkxTTLRwLgsEP/appealCourts",
+        "courtTypeId": "COTPm8jjc2PAydpFhq",
+        "object": "Court",
+        "courtId": "CORTcTkxTTLRwLgsEP"
+      },
+      "filedDate": "2023-08-31T00:00:00+00:00",
+      "caseType": {
+        "caseTypeId": "CTYPMrcrvoUeZHmsgk",
+        "caseClassId": "CSCLMrcrvoUeZHmsgk",
+        "caseTypeGroup": null,
+        "caseTypeGroupId": null,
+        "createdDate": "2022-10-12T11:00:47+00:00",
+        "areaOfLaw": null,
+        "name": null,
+        "caseTypeTag": null,
+        "caseClass": "Criminal",
+        "areaOfLawId": null,
+        "saliCode": null,
+        "object": "CaseType"
+      },
+      "lastFetchDate": "2023-09-03T09:08:40+00:00",
+      "caseNumber": "W23906441",
+      "caseId": "CASEaicd00d1a4433e",
+      "courtLocation": {
+        "courtLocationId": "COLON3VvpuSsF37JMv",
+        "createdDate": "2022-07-08T05:50:05+00:00",
+        "courtServiceStatusAPI": "https://enterpriseapi.unicourt.com/masterData/courtServiceStatus?q=CourtLocation%3A%28courtLocationId%3A%22COLON3VvpuSsF37JMv%22%29",
+        "city": "Fresno",
+        "stateName": "California",
+        "courtsForCourtLocationAPI": "https://enterpriseapi.unicourt.com/masterData/courtLocation/COLON3VvpuSsF37JMv/courts",
+        "name": "Fresno Superior Courthouse Downtown",
+        "streetAddress1": "1100 Van Ness Ave",
+        "streetAddress2": null,
+        "object": "CourtLocation"
+      },
+      "participantsLastFetchDate": "2023-09-03T09:08:40+00:00",
+      "caseAPI": "https://enterpriseapi.unicourt.com/case/CASEaicd00d1a4433e",
+      "caseName": "State of California, County of Fresno vs. The internet service provider known as Google LLC",
+      "firstFetchDate": "2023-09-01T09:15:03+00:00",
+      "object": "CaseSearchResult"
+    },
+    {
+      "lastFetchDateWithUpdates": "2023-08-31T06:00:19+00:00",
+      "caseStatus": {
+        "caseStatusGroup": "Closed",
+        "caseStatusId": "CSSTU3RKG2Ej3yarht",
+        "createdDate": "2022-03-28T04:58:47+00:00",
+        "name": "Judgment Entered",
+        "caseStatusGroupId": "CSSG6ERqyFdydo52WK",
+        "caseClassArray": [
+          "Civil"
+        ],
+        "object": "CaseStatus"
+      },
+      "matchedObjectArray": [
+        {
+          "matchedObjectAPI": "https://enterpriseapi.unicourt.com/case/CASEgza9d8fe78180d",
+          "highlightSnippet": "Pat. 2,100 - &lt;b&gt;Google&lt;/b&gt; LLC vs &lt;b&gt;Google&lt;/b&gt; LLC",
+          "matchedObjectName": "Case",
+          "matchedObjectId": "CASEgza9d8fe78180d",
+          "matchedObjectAttribute": "caseName",
+          "object": "MatchedObject"
+        }
+      ],
+      "court": {
+        "container": null,
+        "courtSystemId": "COSYdujvgWvFdfVB9S",
+        "courtServiceStatusAPI": "https://enterpriseapi.unicourt.com/masterData/courtServiceStatus?q=Court%3A%28courtId%3A%22CORT7NednCcA9RdPVH%22%29",
+        "additionalLevels": null,
+        "containerType": null,
+        "type": "Federal",
+        "nameAka": "Patent Trial and Appeal Board",
+        "jurisdictionGeoForCourtAPI": "https://enterpriseapi.unicourt.com/masterData/court/CORT7NednCcA9RdPVH/jurisdictionGeo",
+        "system": "Patent Trial and Appeal Board",
+        "createdDate": "2022-07-08T05:50:03+00:00",
+        "courtLocationsForCourtAPI": "https://enterpriseapi.unicourt.com/masterData/court/CORT7NednCcA9RdPVH/courtLocations",
+        "name": "Patent Trial and Appeal Board",
+        "appealCourtsForCourtAPI": "https://enterpriseapi.unicourt.com/masterData/court/CORT7NednCcA9RdPVH/appealCourts",
+        "courtTypeId": "COTPLurdwRD5jyKSYb",
+        "object": "Court",
+        "courtId": "CORT7NednCcA9RdPVH"
+      },
+      "filedDate": "2023-08-30T00:00:00+00:00",
+      "caseType": {
+        "caseTypeId": "CTYPSbP8fBKFgVv5Lo",
+        "caseClassId": "CSCLNjbKTN7Yfo2wdb",
+        "caseTypeGroup": "Intellectual Property",
+        "caseTypeGroupId": "CTYGZ2chrLe2rgcHWK",
+        "createdDate": "2022-03-28T04:58:33+00:00",
+        "areaOfLaw": "Intellectual Property",
+        "name": "Patent",
+        "caseTypeTag": null,
+        "caseClass": "Civil",
+        "areaOfLawId": "AOFL5U7NSxGxQgQVCy",
+        "saliCode": "INTP-PATE",
+        "object": "CaseType"
+      },
+      "lastFetchDate": "2023-09-04T06:02:03+00:00",
+      "caseNumber": "2023000076",
+      "caseId": "CASEgza9d8fe78180d",
+      "courtLocation": {
+        "courtLocationId": "COLOKzzEugLTkLTf39",
+        "createdDate": "2022-07-08T05:50:04+00:00",
+        "courtServiceStatusAPI": "https://enterpriseapi.unicourt.com/masterData/courtServiceStatus?q=CourtLocation%3A%28courtLocationId%3A%22COLOKzzEugLTkLTf39%22%29",
+        "city": "Alexandria",
+        "stateName": "Virginia",
+        "courtsForCourtLocationAPI": "https://enterpriseapi.unicourt.com/masterData/courtLocation/COLOKzzEugLTkLTf39/courts",
+        "name": "Madison Building",
+        "streetAddress1": "600 Dulany St",
+        "streetAddress2": null,
+        "object": "CourtLocation"
+      },
+      "participantsLastFetchDate": "2023-09-04T06:02:03+00:00",
+      "caseAPI": "https://enterpriseapi.unicourt.com/case/CASEgza9d8fe78180d",
+      "caseName": "U.S. Pat. 2,100 - Google LLC vs Google LLC",
+      "firstFetchDate": "2023-08-31T06:00:19+00:00",
+      "object": "CaseSearchResult"
+    },
+    {
+      "lastFetchDateWithUpdates": "2023-09-01T05:12:51+00:00",
+      "caseStatus": {
+        "caseStatusGroup": "Open",
+        "caseStatusId": "CSSTVnE3shD3CGtkcZ",
+        "createdDate": "2022-03-28T04:58:47+00:00",
+        "name": "Open",
+        "caseStatusGroupId": "CSSGCYoBCJ3A8j4MX4",
+        "caseClassArray": [
+          "Civil",
+          "Criminal"
+        ],
+        "object": "CaseStatus"
+      },
+      "matchedObjectArray": [
+        {
+          "matchedObjectAPI": "https://enterpriseapi.unicourt.com/case/CASEgkcf03db64a793",
+          "highlightSnippet": "&lt;b&gt;Google&lt;/b&gt; LLC",
+          "matchedObjectName": "Case",
+          "matchedObjectId": "CASEgkcf03db64a793",
+          "matchedObjectAttribute": "caseName",
+          "object": "MatchedObject"
+        }
+      ],
+      "court": {
+        "container": "Federal",
+        "courtSystemId": "COSYKbTM5W3zTCNN6j",
+        "courtServiceStatusAPI": "https://enterpriseapi.unicourt.com/masterData/courtServiceStatus?q=Court%3A%28courtId%3A%22CORTiAe7Jz7v23hk5G%22%29",
+        "additionalLevels": null,
+        "containerType": "Circuit",
+        "type": "Federal",
+        "nameAka": "U.S. Court of Appeals for the Federal Circuit",
+        "jurisdictionGeoForCourtAPI": "https://enterpriseapi.unicourt.com/masterData/court/CORTiAe7Jz7v23hk5G/jurisdictionGeo",
+        "system": "U.S. Courts of Appeals",
+        "createdDate": "2022-07-08T05:49:56+00:00",
+        "courtLocationsForCourtAPI": "https://enterpriseapi.unicourt.com/masterData/court/CORTiAe7Jz7v23hk5G/courtLocations",
+        "name": "Court of Appeals for the Federal Circuit",
+        "appealCourtsForCourtAPI": "https://enterpriseapi.unicourt.com/masterData/court/CORTiAe7Jz7v23hk5G/appealCourts",
+        "courtTypeId": "COTPLurdwRD5jyKSYb",
+        "object": "Court",
+        "courtId": "CORTiAe7Jz7v23hk5G"
+      },
+      "filedDate": "2023-08-30T00:00:00+00:00",
+      "caseType": {
+        "caseTypeId": "CTYPSbP8fBKFgVv5Lo",
+        "caseClassId": "CSCLNjbKTN7Yfo2wdb",
+        "caseTypeGroup": "Intellectual Property",
+        "caseTypeGroupId": "CTYGZ2chrLe2rgcHWK",
+        "createdDate": "2022-03-28T04:58:33+00:00",
+        "areaOfLaw": "Intellectual Property",
+        "name": "Patent",
+        "caseTypeTag": null,
+        "caseClass": "Civil",
+        "areaOfLawId": "AOFL5U7NSxGxQgQVCy",
+        "saliCode": "INTP-PATE",
+        "object": "CaseType"
+      },
+      "lastFetchDate": "2023-09-01T05:12:51+00:00",
+      "caseNumber": "23-2340",
+      "caseId": "CASEgkcf03db64a793",
+      "courtLocation": {
+        "courtLocationId": "COLOUbAE888qHT2p7K",
+        "createdDate": "2022-07-08T05:49:56+00:00",
+        "courtServiceStatusAPI": "https://enterpriseapi.unicourt.com/masterData/courtServiceStatus?q=CourtLocation%3A%28courtLocationId%3A%22COLOUbAE888qHT2p7K%22%29",
+        "city": "District of Columbia",
+        "stateName": "District of Columbia",
+        "courtsForCourtLocationAPI": "https://enterpriseapi.unicourt.com/masterData/courtLocation/COLOUbAE888qHT2p7K/courts",
+        "name": "Howard T. Markey National Courts Building",
+        "streetAddress1": "717 Madison Pl Nw",
+        "streetAddress2": null,
+        "object": "CourtLocation"
+      },
+      "participantsLastFetchDate": "2023-09-01T05:12:51+00:00",
+      "caseAPI": "https://enterpriseapi.unicourt.com/case/CASEgkcf03db64a793",
+      "caseName": "ALD Social, LLC v. Google LLC",
+      "firstFetchDate": "2023-09-01T05:01:20+00:00",
+      "object": "CaseSearchResult"
+    },
+    {
+      "lastFetchDateWithUpdates": "2023-09-01T05:10:57+00:00",
+      "caseStatus": {
+        "caseStatusGroup": "Open",
+        "caseStatusId": "CSSTVnE3shD3CGtkcZ",
+        "createdDate": "2022-03-28T04:58:47+00:00",
+        "name": "Open",
+        "caseStatusGroupId": "CSSGCYoBCJ3A8j4MX4",
+        "caseClassArray": [
+          "Civil",
+          "Criminal"
+        ],
+        "object": "CaseStatus"
+      },
+      "matchedObjectArray": [
+        {
+          "matchedObjectAPI": "https://enterpriseapi.unicourt.com/case/CASEgk8e8bc4bb610c",
+          "highlightSnippet": "&lt;b&gt;Google&lt;/b&gt;, LLC",
+          "matchedObjectName": "Case",
+          "matchedObjectId": "CASEgk8e8bc4bb610c",
+          "matchedObjectAttribute": "caseName",
+          "object": "MatchedObject"
+        }
+      ],
+      "court": {
+        "container": "9",
+        "courtSystemId": "COSYKbTM5W3zTCNN6j",
+        "courtServiceStatusAPI": "https://enterpriseapi.unicourt.com/masterData/courtServiceStatus?q=Court%3A%28courtId%3A%22CORTCNCpcBrj8TWDfZ%22%29",
+        "additionalLevels": null,
+        "containerType": "Circuit",
+        "type": "Federal",
+        "nameAka": "U.S. Court of Appeals for the Ninth Circuit",
+        "jurisdictionGeoForCourtAPI": "https://enterpriseapi.unicourt.com/masterData/court/CORTCNCpcBrj8TWDfZ/jurisdictionGeo",
+        "system": "U.S. Courts of Appeals",
+        "createdDate": "2022-07-08T05:49:48+00:00",
+        "courtLocationsForCourtAPI": "https://enterpriseapi.unicourt.com/masterData/court/CORTCNCpcBrj8TWDfZ/courtLocations",
+        "name": "Court of Appeals for the Ninth Circuit",
+        "appealCourtsForCourtAPI": "https://enterpriseapi.unicourt.com/masterData/court/CORTCNCpcBrj8TWDfZ/appealCourts",
+        "courtTypeId": "COTPLurdwRD5jyKSYb",
+        "object": "Court",
+        "courtId": "CORTCNCpcBrj8TWDfZ"
+      },
+      "filedDate": "2023-08-30T00:00:00+00:00",
+      "caseType": {
+        "caseTypeId": "CTYPNjbKTN7Yfo2wdb",
+        "caseClassId": "CSCLNjbKTN7Yfo2wdb",
+        "caseTypeGroup": null,
+        "caseTypeGroupId": null,
+        "createdDate": "2022-03-28T04:58:35+00:00",
+        "areaOfLaw": null,
+        "name": null,
+        "caseTypeTag": null,
+        "caseClass": "Civil",
+        "areaOfLawId": null,
+        "saliCode": null,
+        "object": "CaseType"
+      },
+      "lastFetchDate": "2023-09-01T05:10:57+00:00",
+      "caseNumber": "23-80077",
+      "caseId": "CASEgk8e8bc4bb610c",
+      "courtLocation": {
+        "courtLocationId": "COLOYvn7woiYDvfx64",
+        "createdDate": "2022-07-08T05:49:56+00:00",
+        "courtServiceStatusAPI": "https://enterpriseapi.unicourt.com/masterData/courtServiceStatus?q=CourtLocation%3A%28courtLocationId%3A%22COLOYvn7woiYDvfx64%22%29",
+        "city": "San Francisco",
+        "stateName": "California",
+        "courtsForCourtLocationAPI": "https://enterpriseapi.unicourt.com/masterData/courtLocation/COLOYvn7woiYDvfx64/courts",
+        "name": "James R. Browning U.S. Courthouse",
+        "streetAddress1": "95 Seventh St",
+        "streetAddress2": null,
+        "object": "CourtLocation"
+      },
+      "participantsLastFetchDate": "2023-09-01T05:10:57+00:00",
+      "caseAPI": "https://enterpriseapi.unicourt.com/case/CASEgk8e8bc4bb610c",
+      "caseName": "Rene Cabrera, et al v. Google, LLC",
+      "firstFetchDate": "2023-09-01T05:01:11+00:00",
+      "object": "CaseSearchResult"
+    },
+    {
+      "lastFetchDateWithUpdates": "2023-09-01T05:11:37+00:00",
+      "caseStatus": {
+        "caseStatusGroup": "Open",
+        "caseStatusId": "CSSTVnE3shD3CGtkcZ",
+        "createdDate": "2022-03-28T04:58:47+00:00",
+        "name": "Open",
+        "caseStatusGroupId": "CSSGCYoBCJ3A8j4MX4",
+        "caseClassArray": [
+          "Civil",
+          "Criminal"
+        ],
+        "object": "CaseStatus"
+      },
+      "matchedObjectArray": [
+        {
+          "matchedObjectAPI": "https://enterpriseapi.unicourt.com/case/CASEgk14b34abd71c8",
+          "highlightSnippet": "&lt;b&gt;Google&lt;/b&gt;, LLC, et al",
+          "matchedObjectName": "Case",
+          "matchedObjectId": "CASEgk14b34abd71c8",
+          "matchedObjectAttribute": "caseName",
+          "object": "MatchedObject"
+        }
+      ],
+      "court": {
+        "container": "9",
+        "courtSystemId": "COSYKbTM5W3zTCNN6j",
+        "courtServiceStatusAPI": "https://enterpriseapi.unicourt.com/masterData/courtServiceStatus?q=Court%3A%28courtId%3A%22CORTCNCpcBrj8TWDfZ%22%29",
+        "additionalLevels": null,
+        "containerType": "Circuit",
+        "type": "Federal",
+        "nameAka": "U.S. Court of Appeals for the Ninth Circuit",
+        "jurisdictionGeoForCourtAPI": "https://enterpriseapi.unicourt.com/masterData/court/CORTCNCpcBrj8TWDfZ/jurisdictionGeo",
+        "system": "U.S. Courts of Appeals",
+        "createdDate": "2022-07-08T05:49:48+00:00",
+        "courtLocationsForCourtAPI": "https://enterpriseapi.unicourt.com/masterData/court/CORTCNCpcBrj8TWDfZ/courtLocations",
+        "name": "Court of Appeals for the Ninth Circuit",
+        "appealCourtsForCourtAPI": "https://enterpriseapi.unicourt.com/masterData/court/CORTCNCpcBrj8TWDfZ/appealCourts",
+        "courtTypeId": "COTPLurdwRD5jyKSYb",
+        "object": "Court",
+        "courtId": "CORTCNCpcBrj8TWDfZ"
+      },
+      "filedDate": "2023-08-30T00:00:00+00:00",
+      "caseType": {
+        "caseTypeId": "CTYPDZ7CNZpmnkUF8d",
+        "caseClassId": "CSCLNjbKTN7Yfo2wdb",
+        "caseTypeGroup": "Constitutional and Civil Rights",
+        "caseTypeGroupId": "CTYGDZ7CNZpmnkUF8d",
+        "createdDate": "2023-03-14T18:57:59+00:00",
+        "areaOfLaw": "Constitutional and Civil Rights",
+        "name": null,
+        "caseTypeTag": null,
+        "caseClass": "Civil",
+        "areaOfLawId": "AOFLWfxVDrHw4JiiQ3",
+        "saliCode": null,
+        "object": "CaseType"
+      },
+      "lastFetchDate": "2023-09-01T05:11:37+00:00",
+      "caseNumber": "23-16141",
+      "caseId": "CASEgk14b34abd71c8",
+      "courtLocation": {
+        "courtLocationId": "COLOYvn7woiYDvfx64",
+        "createdDate": "2022-07-08T05:49:56+00:00",
+        "courtServiceStatusAPI": "https://enterpriseapi.unicourt.com/masterData/courtServiceStatus?q=CourtLocation%3A%28courtLocationId%3A%22COLOYvn7woiYDvfx64%22%29",
+        "city": "San Francisco",
+        "stateName": "California",
+        "courtsForCourtLocationAPI": "https://enterpriseapi.unicourt.com/masterData/courtLocation/COLOYvn7woiYDvfx64/courts",
+        "name": "James R. Browning U.S. Courthouse",
+        "streetAddress1": "95 Seventh St",
+        "streetAddress2": null,
+        "object": "CourtLocation"
+      },
+      "participantsLastFetchDate": "2023-09-01T05:11:37+00:00",
+      "caseAPI": "https://enterpriseapi.unicourt.com/case/CASEgk14b34abd71c8",
+      "caseName": "Robert Kennedy, Jr. v. Google, LLC, et al",
+      "firstFetchDate": "2023-09-01T05:01:14+00:00",
+      "object": "CaseSearchResult"
+    },
+    {
+      "lastFetchDateWithUpdates": "2023-08-30T13:06:54+00:00",
+      "caseStatus": null,
+      "matchedObjectArray": [
+        {
+          "matchedObjectAPI": "https://enterpriseapi.unicourt.com/case/CASEja1652d1cd2678",
+          "highlightSnippet": "&lt;b&gt;GOOGLE&lt;/b&gt; INC GEO LOCATION",
+          "matchedObjectName": "Case",
+          "matchedObjectId": "CASEja1652d1cd2678",
+          "matchedObjectAttribute": "caseName",
+          "object": "MatchedObject"
+        }
+      ],
+      "court": {
+        "container": null,
+        "courtSystemId": "COSYbwZtGk67kNqgrT",
+        "courtServiceStatusAPI": "https://enterpriseapi.unicourt.com/masterData/courtServiceStatus?q=Court%3A%28courtId%3A%22CORTHWfhFfPPftXEHJ%22%29",
+        "additionalLevels": null,
+        "containerType": null,
+        "type": "State",
+        "nameAka": "Sebastian County District Court of Arkansas",
+        "jurisdictionGeoForCourtAPI": "https://enterpriseapi.unicourt.com/masterData/court/CORTHWfhFfPPftXEHJ/jurisdictionGeo",
+        "system": "Arkansas County District Courts",
+        "createdDate": "2022-07-08T05:50:55+00:00",
+        "courtLocationsForCourtAPI": "https://enterpriseapi.unicourt.com/masterData/court/CORTHWfhFfPPftXEHJ/courtLocations",
+        "name": "Sebastian County District Court",
+        "appealCourtsForCourtAPI": "https://enterpriseapi.unicourt.com/masterData/court/CORTHWfhFfPPftXEHJ/appealCourts",
+        "courtTypeId": "COTPm8jjc2PAydpFhq",
+        "object": "Court",
+        "courtId": "CORTHWfhFfPPftXEHJ"
+      },
+      "filedDate": "2023-08-29T00:00:00+00:00",
+      "caseType": {
+        "caseTypeId": "CTYPMrcrvoUeZHmsgk",
+        "caseClassId": "CSCLMrcrvoUeZHmsgk",
+        "caseTypeGroup": null,
+        "caseTypeGroupId": null,
+        "createdDate": "2022-10-12T11:00:47+00:00",
+        "areaOfLaw": null,
+        "name": null,
+        "caseTypeTag": null,
+        "caseClass": "Criminal",
+        "areaOfLawId": null,
+        "saliCode": null,
+        "object": "CaseType"
+      },
+      "lastFetchDate": "2023-09-01T14:09:18+00:00",
+      "caseNumber": "66FSW-23-22",
+      "caseId": "CASEja1652d1cd2678",
+      "courtLocation": {
+        "courtLocationId": "COLOS9tWhb2gbieMZG",
+        "createdDate": "2022-07-08T05:50:55+00:00",
+        "courtServiceStatusAPI": "https://enterpriseapi.unicourt.com/masterData/courtServiceStatus?q=CourtLocation%3A%28courtLocationId%3A%22COLOS9tWhb2gbieMZG%22%29",
+        "city": "Fort Smith",
+        "stateName": "Arkansas",
+        "courtsForCourtLocationAPI": "https://enterpriseapi.unicourt.com/masterData/courtLocation/COLOS9tWhb2gbieMZG/courts",
+        "name": "Sebastian County District Court",
+        "streetAddress1": "901 S B St",
+        "streetAddress2": null,
+        "object": "CourtLocation"
+      },
+      "participantsLastFetchDate": "2023-09-01T14:09:18+00:00",
+      "caseAPI": "https://enterpriseapi.unicourt.com/case/CASEja1652d1cd2678",
+      "caseName": "GOOGLE INC GEO LOCATION",
+      "firstFetchDate": "2023-08-30T13:06:53+00:00",
+      "object": "CaseSearchResult"
+    },
+    {
+      "lastFetchDateWithUpdates": "2023-08-30T06:00:22+00:00",
+      "caseStatus": {
+        "caseStatusGroup": "Closed",
+        "caseStatusId": "CSSTU3RKG2Ej3yarht",
+        "createdDate": "2022-03-28T04:58:47+00:00",
+        "name": "Judgment Entered",
+        "caseStatusGroupId": "CSSG6ERqyFdydo52WK",
+        "caseClassArray": [
+          "Civil"
+        ],
+        "object": "CaseStatus"
+      },
+      "matchedObjectArray": [
+        {
+          "matchedObjectAPI": "https://enterpriseapi.unicourt.com/case/CASEgz041dc28786fd",
+          "highlightSnippet": "Pat. 2,600 - &lt;b&gt;Google&lt;/b&gt; LLC vs &lt;b&gt;Google&lt;/b&gt; LLC",
+          "matchedObjectName": "Case",
+          "matchedObjectId": "CASEgz041dc28786fd",
+          "matchedObjectAttribute": "caseName",
+          "object": "MatchedObject"
+        }
+      ],
+      "court": {
+        "container": null,
+        "courtSystemId": "COSYdujvgWvFdfVB9S",
+        "courtServiceStatusAPI": "https://enterpriseapi.unicourt.com/masterData/courtServiceStatus?q=Court%3A%28courtId%3A%22CORT7NednCcA9RdPVH%22%29",
+        "additionalLevels": null,
+        "containerType": null,
+        "type": "Federal",
+        "nameAka": "Patent Trial and Appeal Board",
+        "jurisdictionGeoForCourtAPI": "https://enterpriseapi.unicourt.com/masterData/court/CORT7NednCcA9RdPVH/jurisdictionGeo",
+        "system": "Patent Trial and Appeal Board",
+        "createdDate": "2022-07-08T05:50:03+00:00",
+        "courtLocationsForCourtAPI": "https://enterpriseapi.unicourt.com/masterData/court/CORT7NednCcA9RdPVH/courtLocations",
+        "name": "Patent Trial and Appeal Board",
+        "appealCourtsForCourtAPI": "https://enterpriseapi.unicourt.com/masterData/court/CORT7NednCcA9RdPVH/appealCourts",
+        "courtTypeId": "COTPLurdwRD5jyKSYb",
+        "object": "Court",
+        "courtId": "CORT7NednCcA9RdPVH"
+      },
+      "filedDate": "2023-08-29T00:00:00+00:00",
+      "caseType": {
+        "caseTypeId": "CTYPSbP8fBKFgVv5Lo",
+        "caseClassId": "CSCLNjbKTN7Yfo2wdb",
+        "caseTypeGroup": "Intellectual Property",
+        "caseTypeGroupId": "CTYGZ2chrLe2rgcHWK",
+        "createdDate": "2022-03-28T04:58:33+00:00",
+        "areaOfLaw": "Intellectual Property",
+        "name": "Patent",
+        "caseTypeTag": null,
+        "caseClass": "Civil",
+        "areaOfLawId": "AOFL5U7NSxGxQgQVCy",
+        "saliCode": "INTP-PATE",
+        "object": "CaseType"
+      },
+      "lastFetchDate": "2023-09-04T06:02:57+00:00",
+      "caseNumber": "2023000856",
+      "caseId": "CASEgz041dc28786fd",
+      "courtLocation": {
+        "courtLocationId": "COLOKzzEugLTkLTf39",
+        "createdDate": "2022-07-08T05:50:04+00:00",
+        "courtServiceStatusAPI": "https://enterpriseapi.unicourt.com/masterData/courtServiceStatus?q=CourtLocation%3A%28courtLocationId%3A%22COLOKzzEugLTkLTf39%22%29",
+        "city": "Alexandria",
+        "stateName": "Virginia",
+        "courtsForCourtLocationAPI": "https://enterpriseapi.unicourt.com/masterData/courtLocation/COLOKzzEugLTkLTf39/courts",
+        "name": "Madison Building",
+        "streetAddress1": "600 Dulany St",
+        "streetAddress2": null,
+        "object": "CourtLocation"
+      },
+      "participantsLastFetchDate": "2023-09-04T06:02:57+00:00",
+      "caseAPI": "https://enterpriseapi.unicourt.com/case/CASEgz041dc28786fd",
+      "caseName": "U.S. Pat. 2,600 - Google LLC vs Google LLC",
+      "firstFetchDate": "2023-08-30T06:00:21+00:00",
+      "object": "CaseSearchResult"
+    },
+    {
+      "lastFetchDateWithUpdates": "2023-08-29T13:03:10+00:00",
+      "caseStatus": {
+        "caseStatusGroup": "Open",
+        "caseStatusId": "CSSTVnE3shD3CGtkcZ",
+        "createdDate": "2022-03-28T04:58:47+00:00",
+        "name": "Open",
+        "caseStatusGroupId": "CSSGCYoBCJ3A8j4MX4",
+        "caseClassArray": [
+          "Civil",
+          "Criminal"
+        ],
+        "object": "CaseStatus"
+      },
+      "matchedObjectArray": [
+        {
+          "matchedObjectAPI": "https://enterpriseapi.unicourt.com/case/CASEjve37e74d9aef0",
+          "highlightSnippet": "In the Matter of &lt;b&gt;GOOGLE&lt;/b&gt; CUSTODIAN OF RECORDS KANDIYOHI COUNTY",
+          "matchedObjectName": "Case",
+          "matchedObjectId": "CASEjve37e74d9aef0",
+          "matchedObjectAttribute": "caseName",
+          "object": "MatchedObject"
+        }
+      ],
+      "court": {
+        "container": null,
+        "courtSystemId": "COSYACHBdMewtaG5DY",
+        "courtServiceStatusAPI": "https://enterpriseapi.unicourt.com/masterData/courtServiceStatus?q=Court%3A%28courtId%3A%22CORTH3va5oSQnUmNdD%22%29",
+        "additionalLevels": null,
+        "containerType": null,
+        "type": "State",
+        "nameAka": "Santa Clara County Superior Court of California",
+        "jurisdictionGeoForCourtAPI": "https://enterpriseapi.unicourt.com/masterData/court/CORTH3va5oSQnUmNdD/jurisdictionGeo",
+        "system": "California Superior Courts",
+        "createdDate": "2022-07-08T05:50:14+00:00",
+        "courtLocationsForCourtAPI": "https://enterpriseapi.unicourt.com/masterData/court/CORTH3va5oSQnUmNdD/courtLocations",
+        "name": "Santa Clara County Superior Court",
+        "appealCourtsForCourtAPI": "https://enterpriseapi.unicourt.com/masterData/court/CORTH3va5oSQnUmNdD/appealCourts",
+        "courtTypeId": "COTPm8jjc2PAydpFhq",
+        "object": "Court",
+        "courtId": "CORTH3va5oSQnUmNdD"
+      },
+      "filedDate": "2023-08-28T00:00:00+00:00",
+      "caseType": {
+        "caseTypeId": "CTYPMrcrvoUeZHmsgk",
+        "caseClassId": "CSCLMrcrvoUeZHmsgk",
+        "caseTypeGroup": null,
+        "caseTypeGroupId": null,
+        "createdDate": "2022-10-12T11:00:47+00:00",
+        "areaOfLaw": null,
+        "name": null,
+        "caseTypeTag": null,
+        "caseClass": "Criminal",
+        "areaOfLawId": null,
+        "saliCode": null,
+        "object": "CaseType"
+      },
+      "lastFetchDate": "2023-09-04T15:01:37+00:00",
+      "caseNumber": "C2311423",
+      "caseId": "CASEjve37e74d9aef0",
+      "courtLocation": {
+        "courtLocationId": "COLOQDvGFDzMFpXZQ2",
+        "createdDate": "2022-07-08T05:50:15+00:00",
+        "courtServiceStatusAPI": "https://enterpriseapi.unicourt.com/masterData/courtServiceStatus?q=CourtLocation%3A%28courtLocationId%3A%22COLOQDvGFDzMFpXZQ2%22%29",
+        "city": "San Jose",
+        "stateName": "California",
+        "courtsForCourtLocationAPI": "https://enterpriseapi.unicourt.com/masterData/courtLocation/COLOQDvGFDzMFpXZQ2/courts",
+        "name": "Hall of Justice",
+        "streetAddress1": "190-200 W Hedding St",
+        "streetAddress2": null,
+        "object": "CourtLocation"
+      },
+      "participantsLastFetchDate": "2023-09-04T15:01:37+00:00",
+      "caseAPI": "https://enterpriseapi.unicourt.com/case/CASEjve37e74d9aef0",
+      "caseName": "In the Matter of GOOGLE CUSTODIAN OF RECORDS KANDIYOHI COUNTY",
+      "firstFetchDate": "2023-08-29T13:03:10+00:00",
+      "object": "CaseSearchResult"
+    },
+    {
+      "lastFetchDateWithUpdates": "2023-08-29T12:15:10+00:00",
+      "caseStatus": {
+        "caseStatusGroup": "Open",
+        "caseStatusId": "CSSTVnE3shD3CGtkcZ",
+        "createdDate": "2022-03-28T04:58:47+00:00",
+        "name": "Open",
+        "caseStatusGroupId": "CSSGCYoBCJ3A8j4MX4",
+        "caseClassArray": [
+          "Civil",
+          "Criminal"
+        ],
+        "object": "CaseStatus"
+      },
+      "matchedObjectArray": [
+        {
+          "matchedObjectAPI": "https://enterpriseapi.unicourt.com/case/CASEgubb8dc3845948",
+          "highlightSnippet": "&lt;b&gt;Google&lt;/b&gt; et al",
+          "matchedObjectName": "Case",
+          "matchedObjectId": "CASEgubb8dc3845948",
+          "matchedObjectAttribute": "caseName",
+          "object": "MatchedObject"
+        }
+      ],
+      "court": {
+        "container": "Northern District of Texas",
+        "courtSystemId": "COSY8rpkvJ4kMi4ZYD",
+        "courtServiceStatusAPI": "https://enterpriseapi.unicourt.com/masterData/courtServiceStatus?q=Court%3A%28courtId%3A%22CORTj3H5DoWhaEnb5u%22%29",
+        "additionalLevels": null,
+        "containerType": "District",
+        "type": "Federal",
+        "nameAka": "U.S. District Court for the Northern District of Texas",
+        "jurisdictionGeoForCourtAPI": "https://enterpriseapi.unicourt.com/masterData/court/CORTj3H5DoWhaEnb5u/jurisdictionGeo",
+        "system": "U.S. District Courts",
+        "createdDate": "2022-07-08T05:49:53+00:00",
+        "courtLocationsForCourtAPI": "https://enterpriseapi.unicourt.com/masterData/court/CORTj3H5DoWhaEnb5u/courtLocations",
+        "name": "Texas Northern District",
+        "appealCourtsForCourtAPI": "https://enterpriseapi.unicourt.com/masterData/court/CORTj3H5DoWhaEnb5u/appealCourts",
+        "courtTypeId": "COTPLurdwRD5jyKSYb",
+        "object": "Court",
+        "courtId": "CORTj3H5DoWhaEnb5u"
+      },
+      "filedDate": "2023-08-28T00:00:00+00:00",
+      "caseType": {
+        "caseTypeId": "CTYPcfcuHnRH6iLhKq",
+        "caseClassId": "CSCLNjbKTN7Yfo2wdb",
+        "caseTypeGroup": "Prisoner",
+        "caseTypeGroupId": "CTYGL5raTDZ95PcPTz",
+        "createdDate": "2022-03-28T04:58:32+00:00",
+        "areaOfLaw": "Constitutional and Civil Rights",
+        "name": "Civil Right",
+        "caseTypeTag": null,
+        "caseClass": "Civil",
+        "areaOfLawId": "AOFLWfxVDrHw4JiiQ3",
+        "saliCode": "CIVR-POLR",
+        "object": "CaseType"
+      },
+      "lastFetchDate": "2023-08-29T12:15:10+00:00",
+      "caseNumber": "5:23-cv-00196",
+      "caseId": "CASEgubb8dc3845948",
+      "courtLocation": {
+        "courtLocationId": "COLOPQaC8SfLn8Wh6g",
+        "createdDate": "2022-07-08T05:49:54+00:00",
+        "courtServiceStatusAPI": "https://enterpriseapi.unicourt.com/masterData/courtServiceStatus?q=CourtLocation%3A%28courtLocationId%3A%22COLOPQaC8SfLn8Wh6g%22%29",
+        "city": "Abilene",
+        "stateName": "Texas",
+        "courtsForCourtLocationAPI": "https://enterpriseapi.unicourt.com/masterData/courtLocation/COLOPQaC8SfLn8Wh6g/courts",
+        "name": "U.S. Post Office and Courthouse",
+        "streetAddress1": "341 Pine St",
+        "streetAddress2": null,
+        "object": "CourtLocation"
+      },
+      "participantsLastFetchDate": "2023-08-29T12:15:10+00:00",
+      "caseAPI": "https://enterpriseapi.unicourt.com/case/CASEgubb8dc3845948",
+      "caseName": "Zubiate v. Google et al",
+      "firstFetchDate": "2023-08-29T06:03:16+00:00",
+      "object": "CaseSearchResult"
+    },
+    {
+      "lastFetchDateWithUpdates": "2023-08-29T13:00:39+00:00",
+      "caseStatus": {
+        "caseStatusGroup": "Open",
+        "caseStatusId": "CSSTVnE3shD3CGtkcZ",
+        "createdDate": "2022-03-28T04:58:47+00:00",
+        "name": "Open",
+        "caseStatusGroupId": "CSSGCYoBCJ3A8j4MX4",
+        "caseClassArray": [
+          "Civil",
+          "Criminal"
+        ],
+        "object": "CaseStatus"
+      },
+      "matchedObjectArray": [
+        {
+          "matchedObjectAPI": "https://enterpriseapi.unicourt.com/case/CASEbic9269751cc47",
+          "highlightSnippet": "RE: &lt;b&gt;Google&lt;/b&gt; LLC",
+          "matchedObjectName": "Case",
+          "matchedObjectId": "CASEbic9269751cc47",
+          "matchedObjectAttribute": "caseName",
+          "object": "MatchedObject"
+        }
+      ],
+      "court": {
+        "container": null,
+        "courtSystemId": "COSYACHBdMewtaG5DY",
+        "courtServiceStatusAPI": "https://enterpriseapi.unicourt.com/masterData/courtServiceStatus?q=Court%3A%28courtId%3A%22CORTH3va5oSQnUmNdD%22%29",
+        "additionalLevels": null,
+        "containerType": null,
+        "type": "State",
+        "nameAka": "Santa Clara County Superior Court of California",
+        "jurisdictionGeoForCourtAPI": "https://enterpriseapi.unicourt.com/masterData/court/CORTH3va5oSQnUmNdD/jurisdictionGeo",
+        "system": "California Superior Courts",
+        "createdDate": "2022-07-08T05:50:14+00:00",
+        "courtLocationsForCourtAPI": "https://enterpriseapi.unicourt.com/masterData/court/CORTH3va5oSQnUmNdD/courtLocations",
+        "name": "Santa Clara County Superior Court",
+        "appealCourtsForCourtAPI": "https://enterpriseapi.unicourt.com/masterData/court/CORTH3va5oSQnUmNdD/appealCourts",
+        "courtTypeId": "COTPm8jjc2PAydpFhq",
+        "object": "Court",
+        "courtId": "CORTH3va5oSQnUmNdD"
+      },
+      "filedDate": "2023-08-28T00:00:00+00:00",
+      "caseType": {
+        "caseTypeId": "CTYPNjbKTN7Yfo2wdb",
+        "caseClassId": "CSCLNjbKTN7Yfo2wdb",
+        "caseTypeGroup": null,
+        "caseTypeGroupId": null,
+        "createdDate": "2022-03-28T04:58:35+00:00",
+        "areaOfLaw": null,
+        "name": null,
+        "caseTypeTag": null,
+        "caseClass": "Civil",
+        "areaOfLawId": null,
+        "saliCode": null,
+        "object": "CaseType"
+      },
+      "lastFetchDate": "2023-09-04T15:02:27+00:00",
+      "caseNumber": "23CV421598",
+      "caseId": "CASEbic9269751cc47",
+      "courtLocation": {
+        "courtLocationId": "COLOWHMqi9qeB8DiuT",
+        "createdDate": "2022-07-08T05:50:15+00:00",
+        "courtServiceStatusAPI": "https://enterpriseapi.unicourt.com/masterData/courtServiceStatus?q=CourtLocation%3A%28courtLocationId%3A%22COLOWHMqi9qeB8DiuT%22%29",
+        "city": "San Jose",
+        "stateName": "California",
+        "courtsForCourtLocationAPI": "https://enterpriseapi.unicourt.com/masterData/courtLocation/COLOWHMqi9qeB8DiuT/courts",
+        "name": "Downtown Superior Court",
+        "streetAddress1": "191 N 1St St",
+        "streetAddress2": null,
+        "object": "CourtLocation"
+      },
+      "participantsLastFetchDate": "2023-09-04T15:02:27+00:00",
+      "caseAPI": "https://enterpriseapi.unicourt.com/case/CASEbic9269751cc47",
+      "caseName": "RE: Google LLC",
+      "firstFetchDate": "2023-08-29T13:00:38+00:00",
+      "object": "CaseSearchResult"
+    }
+  ],
+  "caseSearchId": "CSRC7Y7Vx9dCphFSwo",
+  "totalCount": 5775,
+  "object": "CaseSearchResponse"
+}</div>
+<div class="step-row">
+<div class="step-container" id="10">
+<div class="step-ref passed">10</div>
+<div class="step-cell passed">Then status 200</div>
+</div>
+<div class="time-cell passed">0</div>
+</div>
+<div class="step-row">
+<div class="step-container" id="11">
+<div class="step-ref passed">11</div>
+<div class="step-cell passed">* def casename = karate.jsonPath(response,"$..caseName")</div>
+</div>
+<div class="time-cell passed">16</div>
+</div>
+<div class="step-row">
+<div class="step-container" id="12">
+<div class="step-ref passed">12</div>
+<div class="step-cell passed">* print casename</div>
+</div>
+<div class="time-cell passed">1</div>
+</div>
+<div class="preformatted" data-parent="12">11:11:30.385 [print] [
+  "State of California, County of Fresno vs. The internet service provider known as Google LLC",
+  "U.S. Pat. 2,100 - Google LLC vs Google LLC",
+  "ALD Social, LLC v. Google LLC",
+  "Rene Cabrera, et al v. Google, LLC",
+  "Robert Kennedy, Jr. v. Google, LLC, et al",
+  "GOOGLE INC GEO LOCATION",
+  "U.S. Pat. 2,600 - Google LLC vs Google LLC",
+  "In the Matter of GOOGLE CUSTODIAN OF RECORDS KANDIYOHI COUNTY",
+  "Zubiate v. Google et al",
+  "RE: Google LLC"
+]</div>
+<div class="step-row">
+<div class="step-container" id="13">
+<div class="step-ref passed">13</div>
+<div class="step-cell passed">* match each karate.lowerCase(casename) contains karate.lowerCase('Google')</div>
+</div>
+<div class="time-cell passed">15</div>
+</div>
+</div>
+</div>
+    
+</div>   
+  
+</body>
+
+</html>
